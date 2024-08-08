@@ -1,0 +1,19 @@
+package csd;
+
+public class hw2q2 {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Bir sayı giriniz:");
+		long a = Long.parseLong(kb.nextLine());
+		printDuration(a);
+	}
+	public static void printDuration(long a)
+	{	
+		long saniye = a%60;
+		long toplam_dakika = a /60;
+		long dakika = toplam_dakika%60;
+		long saat = toplam_dakika/60;
+		System.out.println(saat+":"+dakika+":"+saniye);		
+	}	
+}
