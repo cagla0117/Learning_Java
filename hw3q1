@@ -1,0 +1,47 @@
+package csd;
+
+public class hw3q1 {
+    public static void main(String[] args) {    
+    	for(int i = 100  ; i <1000;i++ ) 
+    	{
+            int c = i % 10;  
+            int d = i / 10;
+            int b = d % 10;
+            int a = d / 10;
+
+            int abc = a * 100 + b * 10 + c;
+            int cba = c * 100 + b * 10 + a;
+            int ab = a * 10 + b;
+            int bc = 10 * b + c;
+            int cb = c * 10 + b;
+            int ba = b * 10 + a;
+
+          
+           
+
+            if (cba > abc && isPrime(abc) && isPrime(cba) && isPrime(ab) && isPrime(bc) && isPrime(cb) && isPrime(ba)) {
+                System.out.print("Sayı: " + abc);
+            } 
+    	}
+        
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num == 2) {
+            return true;
+        }
+        if (num % 2 == 0) {
+            return false;
+        }
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
