@@ -2,14 +2,11 @@
         if (num <= 0) {
             return false; 
         }
-
-        int sumOfDigits = 0;
+        int sum = 0;
         int temp = num;
-
         while (temp > 0) {
-            sumOfDigits += temp % 10;
+            sum += temp % 10;
             temp = temp / 10;
         }
-
-        return num % sumOfDigits == 0;
+        return num % sum == 0;
     }
