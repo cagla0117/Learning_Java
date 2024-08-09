@@ -1,0 +1,21 @@
+package csd;
+
+public class hw3q2 {
+	public static void main(String[] args) {
+		int i = 56789;
+		System.out.println("Digital Root: " + calculateDigitalRoot(i));
+	}
+
+	public static int calculateDigitalRoot(int a) {
+		while (a >= 10) {
+			int sum = 0;
+			while (a > 0) {
+				sum += a % 10;
+				a = a / 10;
+			}
+			sum = a + sum;
+			a = sum;
+		}
+		return a;
+	}
+}
