@@ -1,0 +1,62 @@
+package csd;
+import java.util.Random;
+
+class q6 {
+	public static void main(String [] args)
+	{	
+		dice.run();
+	}
+
+
+}
+class dice {
+	public static void run()
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		Random random = new Random();
+		int win = 0;
+		int lost = 0;
+		int count = 0;
+		
+		while(count < 100000) {
+			int kasa = roll(random);
+			count++;
+			
+			
+			if(kasa == 11 || kasa == 7) {
+				win++;
+			}
+			else if(kasa == 12 || kasa == 2  || kasa == 3) {
+				lost++;
+			}
+			else {
+				int a =0;
+				while(a == 0 ) {
+					int b  = roll(random);
+					if( kasa == b) {
+						a = 1;
+						win++;
+					}
+					else if(b == 7) {
+						a =1;
+						lost++;
+					}
+				}
+				
+			}
+			
+		}
+		System.out.println("Toplam  oyun sayısı: "+count);
+		System.out.println("Win = "+win);
+		System.out.println("Lost = "+lost);
+		System.out.println("Kazanma Olasılığı = "+ (double) win / count);
+		
+	}
+	public static int roll(Random random )
+	{	
+		int a = random.nextInt(6) + 1;
+		int b = random.nextInt(6) + 1;
+		
+		return a + b;
+	}
+}
